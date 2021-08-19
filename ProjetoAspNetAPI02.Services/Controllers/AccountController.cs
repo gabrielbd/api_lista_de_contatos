@@ -21,14 +21,14 @@ namespace ProjetoAspNetAPI02.Services.Controllers
 
         [HttpPost]
         [Route("Register")] //Account/Register (cadastro de usuario)
-        public IActionResult Register()
+        public IActionResult Register(RegisterModel model)
         {
             return Ok();
         }
 
         [HttpPost]
         [Route("PasswordRecover")] //Account/PasswordRecover (esqueci minha senha)
-        public IActionResult PasswordRecover()
+        public IActionResult PasswordRecover(PasswordRecoverModel model)
         {
             return Ok();
         }

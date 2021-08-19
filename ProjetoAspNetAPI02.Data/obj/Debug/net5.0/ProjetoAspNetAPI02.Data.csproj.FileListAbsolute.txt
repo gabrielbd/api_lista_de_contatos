@@ -1,0 +1,16 @@
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\bin\Debug\net5.0\ProjetoAspNetAPI02.Data.deps.json
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\bin\Debug\net5.0\ProjetoAspNetAPI02.Data.runtimeconfig.json
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\bin\Debug\net5.0\ProjetoAspNetAPI02.Data.runtimeconfig.dev.json
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\bin\Debug\net5.0\ProjetoAspNetAPI02.Data.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\bin\Debug\net5.0\ref\ProjetoAspNetAPI02.Data.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\bin\Debug\net5.0\ProjetoAspNetAPI02.Data.pdb
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.csprojAssemblyReference.cache
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.AssemblyInfoInputs.cache
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.AssemblyInfo.cs
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.csproj.CoreCompileInputs.cache
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ref\ProjetoAspNetAPI02.Data.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.pdb
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\obj\Debug\net5.0\ProjetoAspNetAPI02.Data.genruntimeconfig.cache
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Data\bin\Debug\net5.0\appsettings.json
