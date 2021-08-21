@@ -29,6 +29,7 @@ namespace ProjetoAspNetAPI02.Services
 
             services.AddControllers();
             SwaggerConfiguration.ConfigureServices(services);
+            RepositoryConfiguration.ConfigureServices(services, Configuration);
 
 
         }

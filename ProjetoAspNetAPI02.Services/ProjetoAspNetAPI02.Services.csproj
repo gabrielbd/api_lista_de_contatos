@@ -8,4 +8,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoAspNetAPI02.Data\ProjetoAspNetAPI02.Data.csproj" />
+    <ProjectReference Include="..\ProjetoAspNetAPI02.Messages\ProjetoAspNetAPI02.Messages.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoAspNetAPI02.Data.Contexts;
+using ProjetoAspNetAPI02.Data.Cryptography;
 using ProjetoAspNetAPI02.Data.Entities;
 using ProjetoAspNetAPI02.Data.Interfaces;
 using System;
@@ -23,12 +24,28 @@ namespace ProjetoAspNetAPI02.Data.Repositories
 
         public void Inserir(Usuario usuario)
         {
+            //criptografar a senha do usuario
+            usuario.Senha = MD5Cryptography.Encrypt(usuario.Senha);
+
             _context.Entry(usuario).State = EntityState.Added;
             _context.SaveChanges();
         }
 
         public void Alterar(Usuario usuario)
         {
+            _context.Entry(usuario).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void AlterarSenha(Guid idUsuario, string novaSenha)
+        {
+            //buscar o usuario atraves do idUsuario
+            var usuario = _context.Usuario.Find(idUsuario);
+
+            //criptografar a nova senha do usuario
+            usuario.Senha = MD5Cryptography.Encrypt(novaSenha);
+
+            //atualizar o usuario
             _context.Entry(usuario).State = EntityState.Modified;
             _context.SaveChanges();
         }
@@ -59,6 +76,9 @@ namespace ProjetoAspNetAPI02.Data.Repositories
 
         public Usuario Obter(string email, string senha)
         {
+            //criptografar a senha do usuario
+            senha = MD5Cryptography.Encrypt(senha);
+
             return _context.Usuario
                     .FirstOrDefault(u => u.Email.Equals(email)
                                       && u.Senha.Equals(senha));
@@ -66,3 +86,5 @@ namespace ProjetoAspNetAPI02.Data.Repositories
         }
     }
 }
+
+
