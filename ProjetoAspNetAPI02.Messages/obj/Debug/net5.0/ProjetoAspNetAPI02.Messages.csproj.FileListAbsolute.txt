@@ -1,0 +1,12 @@
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\bin\Debug\net5.0\ProjetoAspNetAPI02.Messages.deps.json
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\bin\Debug\net5.0\ProjetoAspNetAPI02.Messages.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\bin\Debug\net5.0\ref\ProjetoAspNetAPI02.Messages.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\bin\Debug\net5.0\ProjetoAspNetAPI02.Messages.pdb
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ProjetoAspNetAPI02.Messages.csprojAssemblyReference.cache
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ProjetoAspNetAPI02.Messages.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ProjetoAspNetAPI02.Messages.AssemblyInfoInputs.cache
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ProjetoAspNetAPI02.Messages.AssemblyInfo.cs
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ProjetoAspNetAPI02.Messages.csproj.CoreCompileInputs.cache
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ProjetoAspNetAPI02.Messages.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ref\ProjetoAspNetAPI02.Messages.dll
+C:\Users\Marcelo\Desktop\ProjetoAspNetAPI02\ProjetoAspNetAPI02.Messages\obj\Debug\net5.0\ProjetoAspNetAPI02.Messages.pdb

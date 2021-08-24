@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoAspNetAPI02.Data.Entities;
 using ProjetoAspNetAPI02.Data.Interfaces;
 using ProjetoAspNetAPI02.Messages;
+using ProjetoAspNetAPI02.Services.Authentication;
 using ProjetoAspNetAPI02.Services.Models;
 using System;
 using System.Collections.Generic;
@@ -17,11 +19,14 @@ namespace ProjetoAspNetAPI02.Services.Controllers
     {
         //atributo para acessar os métodos do repositorio
         private readonly IUsuarioRepository _usuariorepository;
+        //atributo para acessar os métodos do JWT (geração do TOKEN)
+        private readonly JwtTokenServices _jwtTokenServices;
 
         //construtor para inicializar o atributo (injeção de dependencia)
-        public AccountController(IUsuarioRepository usuariorepository)
+        public AccountController(IUsuarioRepository usuariorepository, JwtTokenServices jwtTokenServices)
         {
             _usuariorepository = usuariorepository;
+            _jwtTokenServices = jwtTokenServices;
         }
 
         [HttpPost]
@@ -39,10 +44,10 @@ namespace ProjetoAspNetAPI02.Services.Controllers
                     return Ok(new
                     {
                         mensagem = "Usuário autenticado com sucesso",
-                        accessToken = "<TOKEN>", //TODO -> CHAVE DE AUTENTICAÇÂO GERADA PARA O USUARIO..
+                        accessToken = _jwtTokenServices.GenerateToken(usuario.Email),
                         usuario = usuario.Nome,
                         email = usuario.Email
-                    }); ;
+                    });
                 }
                 else
                 {
@@ -124,6 +129,35 @@ namespace ProjetoAspNetAPI02.Services.Controllers
             }
         }
 
+        [HttpGet]
+        [Authorize] //somente usuarios autenticados
+        [Route("UserData")] //Account/UserData (retornar os dados do usuario autenticado)
+        public IActionResult UserData()
+        {
+            try
+            {
+                //pegar o email do usuario autenticado (gravado dentro do TOKEN)
+                var email = User.Identity.Name;
+
+                //buscar o usuario no banco de dados atraves do email..
+                var usuario = _usuariorepository.Obter(email);
+
+                //retornar os dados do usuario
+                return Ok(new
+                {
+                    usuario.IdUsuario,
+                    usuario.Nome,
+                    usuario.Email,
+                    usuario.DataCadastro
+                });
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Erro: " + e.Message);
+            }
+        }
+
+
         //método para realizar o envio do email
         private void EnviarNovaSenha(Usuario usuario, string novaSenha)
         {
@@ -152,5 +186,3 @@ namespace ProjetoAspNetAPI02.Services.Controllers
         }
     }
 }
-
-

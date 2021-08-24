@@ -19,6 +19,48 @@ namespace ProjetoAspNetAPI02.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ProjetoAspNetAPI02.Data.Entities.Contato", b =>
+                {
+                    b.Property<Guid>("IdContato")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("IDCONTATO");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("EMAIL");
+
+                    b.Property<string>("Foto")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)")
+                        .HasColumnName("FOTO");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("IDUSUARIO");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)")
+                        .HasColumnName("NOME");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)")
+                        .HasColumnName("TELEFONE");
+
+                    b.HasKey("IdContato");
+
+                    b.HasIndex("IdUsuario");
+
+                    b.ToTable("CONTATO");
+                });
+
             modelBuilder.Entity("ProjetoAspNetAPI02.Data.Entities.Usuario", b =>
                 {
                     b.Property<Guid>("IdUsuario")
@@ -51,6 +93,22 @@ namespace ProjetoAspNetAPI02.Data.Migrations
                     b.HasKey("IdUsuario");
 
                     b.ToTable("USUARIO");
+                });
+
+            modelBuilder.Entity("ProjetoAspNetAPI02.Data.Entities.Contato", b =>
+                {
+                    b.HasOne("ProjetoAspNetAPI02.Data.Entities.Usuario", "Usuario")
+                        .WithMany("Contatos")
+                        .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("ProjetoAspNetAPI02.Data.Entities.Usuario", b =>
+                {
+                    b.Navigation("Contatos");
                 });
 #pragma warning restore 612, 618
         }

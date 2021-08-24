@@ -23,12 +23,14 @@ namespace ProjetoAspNetAPI02.Data.Contexts
         //REGRA 3) Declarar um DbSet para cada entidade do projeto
         //Irá permitir programar os métodos de CRUD para qualquer entidade
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Contato> Contato { get; set; }
 
         //REGRA 4) Implementar o método OnModelCreating
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //adicionar cada classe de mapeamento do projeto
             modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new ContatoMap());
         }
     }
 }

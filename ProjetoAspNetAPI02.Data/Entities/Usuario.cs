@@ -13,6 +13,9 @@ namespace ProjetoAspNetAPI02.Data.Entities
         public string Email { get; set; }
         public string Senha { get; set; }
         public DateTime DataCadastro { get; set; }
+
+        // Um usuario terá muitos contato mediante a isso criamos a lista abaixo.
+        public List<Contato> Contatos;
     }
 }
 

@@ -30,6 +30,8 @@ namespace ProjetoAspNetAPI02.Services
             services.AddControllers();
             SwaggerConfiguration.ConfigureServices(services);
             RepositoryConfiguration.ConfigureServices(services, Configuration);
+            //configuração da autenticação (JWT)
+            JwtTokenConfiguration.ConfigureServices(services, Configuration);
 
 
         }
@@ -47,7 +49,7 @@ namespace ProjetoAspNetAPI02.Services
             app.UseSwaggerUI(s => { s.SwaggerEndpoint("/swagger/v1/swagger.json", "COTI API"); });
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
