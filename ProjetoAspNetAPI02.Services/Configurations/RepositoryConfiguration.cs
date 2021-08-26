@@ -26,8 +26,8 @@ namespace ProjetoAspNetAPI02.Services.Configurations
 
             //mapear cada repositorio do projeto..
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IContatoRepository, ContatoRepository>();
         }
     }
 }
-
 
