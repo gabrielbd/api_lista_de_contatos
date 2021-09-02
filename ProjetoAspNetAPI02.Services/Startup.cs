@@ -26,14 +26,26 @@ namespace ProjetoAspNetAPI02.Services
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+
+            //configuração do Swagger
             SwaggerConfiguration.ConfigureServices(services);
+
+            //configuração da camada de repositorio
             RepositoryConfiguration.ConfigureServices(services, Configuration);
+
             //configuração da autenticação (JWT)
             JwtTokenConfiguration.ConfigureServices(services, Configuration);
 
-
+            //Configuração do CORS (CROSS ORIGIN RESOURCE SHARING)
+            services.AddCors(
+                    s => s.AddPolicy("DefaultPolicy", builder =>
+                    {
+                        builder.AllowAnyOrigin() //qualquer origem pode acessar a API
+                               .AllowAnyMethod() //qualquer método (POST, PUT, DELETE, GET)
+                               .AllowAnyHeader(); //qualquer informação de cabeçalho
+                    })
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +61,9 @@ namespace ProjetoAspNetAPI02.Services
             app.UseSwaggerUI(s => { s.SwaggerEndpoint("/swagger/v1/swagger.json", "COTI API"); });
 
             app.UseRouting();
+
+            app.UseCors("DefaultPolicy");
+
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -59,3 +74,5 @@ namespace ProjetoAspNetAPI02.Services
         }
     }
 }
+
+

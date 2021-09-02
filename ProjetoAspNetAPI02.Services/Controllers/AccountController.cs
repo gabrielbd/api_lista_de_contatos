@@ -86,7 +86,7 @@ namespace ProjetoAspNetAPI02.Services.Controllers
                     //cadastrar o usuario no banco de dados
                     _usuariorepository.Inserir(usuario);
 
-                    return Ok($"Usuário {usuario.Nome}, cadastrado com sucesso.");
+                    return Ok(new { message = $"Usuário {usuario.Nome}, cadastrado com sucesso." });
                 }
             }
             catch (Exception e)
@@ -116,7 +116,7 @@ namespace ProjetoAspNetAPI02.Services.Controllers
                     //enviar a nova senha para o email do usuario
                     EnviarNovaSenha(usuario, novaSenha);
 
-                    return Ok($"Nova senha gerada com sucesso. Verifique no email {model.Email} a nova senha de acesso.");
+                    return Ok(new { message = $"Nova senha gerada com sucesso. Verifique no email {model.Email} a nova senha de acesso." });
                 }
                 else
                 {
@@ -186,3 +186,5 @@ namespace ProjetoAspNetAPI02.Services.Controllers
         }
     }
 }
+
+
